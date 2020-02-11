@@ -78,4 +78,17 @@ public class BookDemoController {
         return result == null ? new ResponseEntity<>(HttpStatus.NOT_FOUND) : new ResponseEntity<>(result, HttpStatus.OK);
     }
 
+  @PostMapping("/authors/update-name-dangerous")
+  public ResponseEntity<Author> updateNameDangerous(@RequestParam Long id, @RequestParam String name) { 
+      String sql = "update author set name = '" + name + "' where id = " + id;
+      jdbcTemplate.update(sql);
+      return findAuthor(id);
+  }
+
+  @PostMapping("/authors/update-name-safe")
+  public ResponseEntity<Author> updateNameSafe(@RequestParam Long id, @RequestParam String name) {
+      jdbcTemplate.update("update author set name = ? where id = ?", name, id);
+      return findAuthor(id);
+  }
+
 }
