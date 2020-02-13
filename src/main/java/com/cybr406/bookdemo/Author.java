@@ -1,7 +1,13 @@
 package com.cybr406.bookdemo;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
 public class Author {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String username;
@@ -9,6 +15,9 @@ public class Author {
     private String name;
 
     private String bio;
+    
+    @OneToMany(mappedBy = "author")
+    private List<Book> book;
 
     public Long getId() {
         return id;
@@ -42,4 +51,12 @@ public class Author {
         this.bio = bio;
     }
 
+    public List<Book> getBook() {
+        return book;
+    }
+
+    public void setBook(List<Book> book) {
+        this.book = book;
+    }
+    
 }
