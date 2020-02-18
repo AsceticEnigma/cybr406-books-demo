@@ -14,10 +14,14 @@ public class Author {
 
     private String name;
 
+    @Lob
     private String bio;
-    
+
     @OneToMany(mappedBy = "author")
     private List<Book> book;
+
+    @OneToMany(mappedBy = "author")
+    private List<Book> books;
 
     public Long getId() {
         return id;
@@ -51,12 +55,11 @@ public class Author {
         this.bio = bio;
     }
 
-    public List<Book> getBook() {
-        return book;
+    public List<Book> getBooks() {
+        return books;
     }
 
-    public void setBook(List<Book> book) {
-        this.book = book;
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
-    
 }

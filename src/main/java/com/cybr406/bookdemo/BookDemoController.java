@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class BookDemoController {
@@ -18,31 +19,13 @@ public class BookDemoController {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    AuthorRepository authorRepository;
+
     @PostMapping("/authors")
     public ResponseEntity<Author> createAuthor(@RequestBody Author author) {
-        // KeyHolder is used to capture newly generated IDs.
-        KeyHolder keyHolder = new GeneratedKeyHolder();
-
-        jdbcTemplate.update(con -> {
-            // Prepared statements guard again SQL injection attacks.
-            // The "?" characters are place holders for real values.
-            PreparedStatement ps = con.prepareStatement(
-                    "insert into author (username, name, bio) values (?, ?, ?)",
-                    Statement.RETURN_GENERATED_KEYS);
-
-            // Provide the actual values for each place holder.
-            // The first argument is the place holder position.
-            // The second argument is the actual value.
-            ps.setString(1, author.getUsername());
-            ps.setString(2, author.getName());
-            ps.setString(3, author.getBio());
-            return ps;
-        }, keyHolder);
-
-        // Extract the generated id.
-        author.setId((long) keyHolder.getKey());
-
-        return new ResponseEntity<>(author, HttpStatus.CREATED);
+        Author created = authorRepository.save(author);
+        return new ResponseEntity<>(created, HttpStatus.CREATED);
     }
 
     @GetMapping("/authors")
@@ -76,6 +59,12 @@ public class BookDemoController {
                 id); // This id will be used in the place holder.
 
         return result == null ? new ResponseEntity<>(HttpStatus.NOT_FOUND) : new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
+    @GetMapping("/authors/name/{name}")
+    public ResponseEntity<Author> findAuthor(@PathVariable String name) {
+        Optional<Author> author = authorRepository.findByUsername(name);
+        return null;
     }
 
   @PostMapping("/authors/update-name-dangerous")

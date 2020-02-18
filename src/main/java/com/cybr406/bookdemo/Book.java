@@ -5,48 +5,36 @@ import javax.persistence.*;
 @Entity
 public class Book {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  Long id;
-  
-  @ManyToOne
-  Author author;
-  
-  String title;
-  
-  @Lob
-  String synopsis;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
 
-  public Long getId() {
-    return id;
-  }
+    String title;
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+    @ManyToOne()
+    Author author;
 
-  public Author getAuthor() {
-    return author;
-  }
+    public Long getId() {
+        return id;
+    }
 
-  public void setAuthor(Author author) {
-    this.author = author;
-  }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-  public String getTitle() {
-    return title;
-  }
+    public String getTitle() {
+        return title;
+    }
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-  public String getSynopsis() {
-    return synopsis;
-  }
+    public Author getAuthor() {
+        return author;
+    }
 
-  public void setSynopsis(String synopsis) {
-    this.synopsis = synopsis;
-  }
-  
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
 }
