@@ -1,6 +1,8 @@
 package com.cybr406.bookdemo;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Book {
@@ -11,8 +13,8 @@ public class Book {
 
     String title;
 
-    @ManyToOne()
-    Author author;
+    @ManyToMany
+    List<Author> authors = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -30,11 +32,11 @@ public class Book {
         this.title = title;
     }
 
-    public Author getAuthor() {
-        return author;
+    public List<Author> getAuthors() {
+        return authors;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
     }
 }

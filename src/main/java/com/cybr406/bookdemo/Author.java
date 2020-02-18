@@ -1,6 +1,7 @@
 package com.cybr406.bookdemo;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,12 +17,9 @@ public class Author {
 
     @Lob
     private String bio;
-
-    @OneToMany(mappedBy = "author")
-    private List<Book> book;
-
-    @OneToMany(mappedBy = "author")
-    private List<Book> books;
+    
+    @ManyToMany(mappedBy = "authors")
+    private List<Book> books = new ArrayList<>();
 
     public Long getId() {
         return id;
