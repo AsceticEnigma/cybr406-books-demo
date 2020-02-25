@@ -1,0 +1,47 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="Ry (generated)" id="1582612731368-1">
+        <createTable tableName="AUTHOR">
+            <column autoIncrement="true" name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_7"/>
+            </column>
+            <column name="BIO" type="CLOB"/>
+            <column name="NAME" type="VARCHAR(255)"/>
+            <column name="USERNAME" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Ry (generated)" id="1582612731368-2">
+        <createTable tableName="BOOK">
+            <column autoIncrement="true" name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_1"/>
+            </column>
+            <column name="TITLE" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Ry (generated)" id="1582612731368-3">
+        <createTable tableName="BOOK_AUTHORS">
+            <column name="BOOKS_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AUTHORS_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Ry (generated)" id="1582612731368-4">
+        <createIndex indexName="FK551I3SLLW1WJ7EX6NIR16BLSM_INDEX_5" tableName="BOOK_AUTHORS">
+            <column name="AUTHORS_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Ry (generated)" id="1582612731368-5">
+        <createIndex indexName="FKMUHQOCX8ETX13U6JRTUTNUMEK_INDEX_5" tableName="BOOK_AUTHORS">
+            <column name="BOOKS_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Ry (generated)" id="1582612731368-6">
+        <addForeignKeyConstraint baseColumnNames="AUTHORS_ID" baseTableName="BOOK_AUTHORS" constraintName="FK551I3SLLW1WJ7EX6NIR16BLSM" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="AUTHOR" validate="true"/>
+    </changeSet>
+    <changeSet author="Ry (generated)" id="1582612731368-7">
+        <addForeignKeyConstraint baseColumnNames="BOOKS_ID" baseTableName="BOOK_AUTHORS" constraintName="FKMUHQOCX8ETX13U6JRTUTNUMEK" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="BOOK" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
