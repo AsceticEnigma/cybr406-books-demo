@@ -1,5 +1,7 @@
 package com.cybr406.bookdemo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +19,8 @@ public class Author {
 
     @Lob
     private String bio;
-    
+
+    @JsonIgnore
     @ManyToMany(mappedBy = "authors")
     private List<Book> books = new ArrayList<>();
 

@@ -12,6 +12,7 @@ import java.util.NoSuchElementException;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
+@Transactional
 class BookDemoApplicationTests {
 
 	@Autowired
@@ -19,9 +20,8 @@ class BookDemoApplicationTests {
 	
 	@Autowired
 	BookRepository bookRepository;
-	
+
 	@Test
-	@Transactional
 	void testThatBooksCanHaveManyAuthors() {
 		List<Book> frankhBooks = bookRepository.findAllByAuthorsId(1L);
 		List<Book> philipkdBooks = bookRepository.findAllByAuthorsId(2L);
