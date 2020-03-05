@@ -15,7 +15,6 @@ public class Book {
 
     String title;
 
-    @JsonIgnore
     @ManyToMany
     List<Author> authors = new ArrayList<>();
 

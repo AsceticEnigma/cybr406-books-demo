@@ -20,7 +20,6 @@ public class Author {
     @Lob
     private String bio;
 
-    @JsonIgnore
     @ManyToMany(mappedBy = "authors")
     private List<Book> books = new ArrayList<>();
 
