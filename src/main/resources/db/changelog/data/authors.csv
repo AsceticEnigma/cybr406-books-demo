@@ -1,3 +1,46 @@
 username,name,bio
 frankh,Frank Herbert,"Franklin Patrick Herbert, Jr. (October 8, 1920 - February 11, 1986) was an American science fiction writer best known for the novel Dune and its five sequels."
 philipkd,Philip K. Dick,"Philip Kindred Dick (December 16, 1928 - March 2, 1982) was an American writer known for his work in science fiction."
+#
+# Randomly Generated Authors
+#
+random_user_4b3cb9fe-57d7-485d-9a26-a971f0763117,random_name_467b95e1-fc8f-4d8b-bbd6-afda5eb63bd3,random_bio_474cbf5c-73a9-41f2-8f09-b2c9a11772a2
+random_user_10a0b351-71de-418f-8536-8c6076bcbbd9,random_name_92c5f89f-760e-4679-a308-06c27374695e,random_bio_7c9bd6ca-8d75-458b-b59e-5ec777198090
+random_user_04eb8e88-4476-478d-a912-97b3c97a1904,random_name_9372483b-0823-4ccc-97e6-3cf3b827273e,random_bio_029a6a5b-64c9-40ad-97f7-aa1a76dafed1
+random_user_18a259c0-0964-4ca9-a224-74d3dab7af59,random_name_6b5866b5-a945-4668-8704-78be7e9687ed,random_bio_c2c5ff4e-f1e5-4d9c-8cf3-c655305cb9d9
+random_user_bb0bd857-9e65-4b7e-8677-fa24f548caec,random_name_9c83da4a-d64f-46ef-9ae9-958c8381d027,random_bio_4161a411-361e-43d2-bc32-902e73fc956b
+random_user_9db2f656-ba45-4681-b248-5fca5784ff2f,random_name_5aa14c58-94ae-4259-9bcb-92bbcce34f1d,random_bio_ad6e6474-9b63-4ca9-b831-5b396166c13c
+random_user_7c98e111-e61a-4c00-9654-efd0b6b7ddbd,random_name_c1833b08-ea4b-4297-af3a-f992488e9b5b,random_bio_8fcdf6a3-d99d-41e9-b7ce-795e8f438759
+random_user_8ae6abec-dc5b-4855-8950-4ef77349b9d5,random_name_1cb60f16-1b40-4e42-b35b-dc6074a083a0,random_bio_9100d505-6ba0-4aef-8e3d-caf7baeaa4af
+random_user_a7a98460-92ea-4e96-8ce2-f90894f5304b,random_name_7c45076d-d9e3-4438-a541-baec0a718ab3,random_bio_b92b9d43-f456-480b-ba86-c1dcb29b217b
+random_user_f995783a-c146-4fe7-912c-335343bee677,random_name_bc883648-9ce7-43d3-80a2-db5e629a51dd,random_bio_3311ddba-faa9-48c2-b78e-eb5fdc3ada45
+random_user_62cebedf-46b8-4c0c-aa95-d5dc5f164644,random_name_e79ae626-caab-4028-b08a-63880fc91950,random_bio_cceb637f-e077-4d66-aa5c-38cf4cc37f37
+random_user_ef31c0f5-a646-4da8-8458-251f5e3fe3dc,random_name_9c1ac76b-2c79-455c-bf9b-11c9481f398e,random_bio_7eea0e44-f15a-445a-82d0-fd6c4688fd65
+random_user_97a34850-54ae-4a88-8c35-279a74febfd3,random_name_ac4f7ca3-0fff-41f6-a53b-bd74bf3d2982,random_bio_8903a178-f211-453f-a0d0-9a9bb25b863a
+random_user_64f81727-1689-430b-a637-bb022fde0045,random_name_458e9e97-502c-4a31-863d-ee27d9f969ff,random_bio_14ee806b-bc48-4c23-af02-6e88c8e7c954
+random_user_d5d6686b-b192-4bdb-9382-1476e25e1563,random_name_e5f71169-525d-4137-895e-e8aeced975a9,random_bio_899e666e-bace-4151-9adc-a8f0d8b2676c
+random_user_425c2003-a787-49a9-8d82-071ef34850e2,random_name_39ad059d-53db-49c3-87f7-d3f13b7b5b4e,random_bio_5899c503-8d61-421b-84f4-95be50b1c92d
+random_user_ecd6b05d-71fc-4c7b-8d77-cacd468a3706,random_name_97753940-93bb-4008-ac8a-7dce12adb47b,random_bio_a482bce5-d798-4ca6-a176-412b126ce27f
+random_user_ddaf8498-0679-40f3-a969-a5a54e3bea9d,random_name_9ba61fbe-e112-4aea-974f-19f54d8ecf0e,random_bio_0be9e582-bed2-4458-bf8a-b88a2d35f637
+random_user_216044d4-3762-4384-8c8d-00638c6b0a12,random_name_e64611c4-fecb-4e19-8664-6a49bbaa5546,random_bio_584ee2d2-29fa-4c89-9ed3-0f229df710bd
+random_user_9dec9609-31fa-428a-aa2f-651956c63e89,random_name_ea492fef-7d37-4b08-ad8e-2f5c95d16318,random_bio_7c20cb53-e9f0-45e5-821e-0fef75627afc
+random_user_ccb06c33-3dc3-45ef-bee0-55b3ab405af6,random_name_79dafec2-1a24-4314-a957-e4b8bfbf8045,random_bio_64f81af6-ab2d-4053-8d60-51938be81cfc
+random_user_24d8eeca-d3f0-4384-a008-64456a02beed,random_name_e6158d70-c53b-4102-85c9-70bb48e84526,random_bio_274dc38b-a95f-4654-abdb-842c2b2d959a
+random_user_656735fc-6242-4718-9ac4-1de0728be33e,random_name_04017343-d1a0-48f5-99a2-2f0ba76e3e0b,random_bio_b1609509-1339-42bf-b5e9-201d4cd411fb
+random_user_31acb8e6-5708-41d8-89cc-29860ebdef77,random_name_5b46b9ef-267d-40c8-b461-f51fbf02fbe9,random_bio_c493985d-97d7-496a-878e-ddb2850f98c4
+random_user_4998da48-291f-4792-b8dd-a00e7e743706,random_name_59789f03-d6e0-4b20-a878-6bc3c30ad53f,random_bio_65995d15-64ae-42ca-b6a4-74bbe1d741bf
+random_user_dbc78323-10c6-4ae2-aa18-eae6a3149dfd,random_name_b9d46ecb-5125-4519-a680-79b8949e6252,random_bio_236ae2ec-e457-4e29-b251-ef7a89b98100
+random_user_4b0799de-a11c-40bc-b73c-6ebf67d0ca4a,random_name_9f4aecb3-53ec-4c12-a123-b9c8454efee2,random_bio_f54f7d5c-2a82-4ceb-8e5f-e1df23e3c9e3
+random_user_102c8cea-4192-42b6-b7fa-4802224859a4,random_name_d45c0456-4fdf-4d21-b335-21e93bcf9613,random_bio_fd0dc5bb-4fdb-459d-bae2-e51b3192e42c
+random_user_194a6c4b-c8b5-473f-a83d-75d5bcc9164a,random_name_8d56cba9-0eb7-4ae6-972f-20825580b15b,random_bio_5f91476b-a490-4fe4-9ef5-7fd9a462f000
+random_user_b31dd881-9cb5-4855-99fb-1651b0af6e03,random_name_92cd72f9-1e59-4a19-a01f-18a644291883,random_bio_102309ae-7df4-496b-896a-214ee9a02633
+random_user_47ddb1b5-3e01-460b-814a-4426e92ae57c,random_name_c685836a-5431-48fc-ada0-b71d418e95b0,random_bio_48099990-212e-4daa-add0-05ee109b3698
+random_user_3aeaa731-574f-4b7b-ad36-36f27a09caf9,random_name_b1965e30-0401-4396-ae8a-b32744726072,random_bio_9592ee03-0342-4a47-b415-381ca577f7cb
+random_user_7291c97c-41ac-4ce5-bb13-cf92e3a482f0,random_name_0e910cd3-4700-45a7-94f1-0b6bc7a09d2a,random_bio_c898a843-d5d8-48fa-872b-3c3297872770
+random_user_d85882ef-f84f-4284-a303-ad90aecba05c,random_name_57fd1fc4-a42f-4f78-9f9e-017b90bbe18a,random_bio_40449da5-21ee-4ce7-80a9-dcbc597bf2c7
+random_user_c208ee02-c1e0-4375-9359-7a6b27845b38,random_name_deba7a06-8145-473b-9f55-fab694dd645e,random_bio_da614e27-1e3a-4300-9b6a-aaddab7043b3
+random_user_6f6bd2c2-ea4b-4dc6-970a-ce8d03f06fc3,random_name_58d59645-bded-4ad3-983b-051d9c598f59,random_bio_13104405-1200-45a8-960a-3fe4f5e1422c
+random_user_d3b0ebe6-845a-46a2-80c3-4715de1140ab,random_name_99603dc8-031d-4c7a-8dcb-1cfc79fc50d7,random_bio_b0066166-6819-46f5-b7bd-eb4be888ec6b
+random_user_4d6365cf-fb4e-48f9-b631-7de0bede1757,random_name_7ab9dcc7-9f83-421a-8ccf-cb9957baa54b,random_bio_46a4698d-0a12-4e4a-a7ab-1a6b2911700c
+random_user_643a0c22-ca01-4820-9df6-2838d6e8340e,random_name_5e0695d8-d625-4488-8994-42e6b69703ed,random_bio_3273a2ef-53a2-4985-a20d-a541e92d13d2
+random_user_f8120a24-7b46-4e6d-ab61-8131b81a53af,random_name_2e74f0b4-23f8-4dfb-8b8d-45b642be96e1,random_bio_c1474454-a4ab-4301-9333-da07453cc779
