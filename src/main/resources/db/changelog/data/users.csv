@@ -1,0 +1,4 @@
+USERNAME,ENABLED,PASSWORD
+admin,true,{bcrypt}$2a$10$mzhwduIAIGoZrBdBS/zHmevtN0NouROvgcbJNxpOosR2HMAwXz5Fi
+frankh,true,{bcrypt}$2a$10$9Q2D70RZiaG9Ejgry3bg/uA2IIbJ9nSjQv5THXOBkrWATUNlbD55e
+philipkd,true,{bcrypt}$2a$10$1d5/zHLuFSnUaTYdhMTCluIwn.LMdcCpRbJVtwNEscoNDCmtR6JXC

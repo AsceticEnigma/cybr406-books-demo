@@ -50,24 +50,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         // Configure authentication to use the database.
-        // Provide hardcoded users (never put passwords in source code in anything other than a demo)
-        User.UserBuilder users = userBuilder();
         auth
                 .jdbcAuthentication()
-                .dataSource(dataSource)
-                .withDefaultSchema()
-                .withUser(users
-                        .username("admin")
-                        .password("admin")
-                        .roles("ADMIN"))
-                .withUser(users
-                        .username("frankh")
-                        .password("password")
-                        .roles("AUTHOR"))
-                .withUser(users
-                        .username("philipkd")
-                        .password("password")
-                        .roles("AUTHOR"));
+                .dataSource(dataSource);
     }
 
     @Override
