@@ -66,14 +66,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         // Customize access here using the http object
         http.authorizeRequests()
-                .mvcMatchers(HttpMethod.GET, "/**").permitAll()   // Allow all read-only requests using GET
-                .anyRequest().authenticated()                                 // Any other requests (POST, PUT)
+                .mvcMatchers(HttpMethod.GET, "/**").permitAll()        // Allow all read-only requests using GET
+                .mvcMatchers(HttpMethod.POST, "/signup").permitAll()   // New authors can sign up any time
+                .anyRequest().authenticated()                                      // Any other requests (POST, PUT)
                 .and()
-                .csrf().disable()                                             // Disable Cross Site Request Forgery protection
+                .csrf().disable()                                                  // Disable Cross Site Request Forgery protection
                 .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)       // Never use http session to obtain a SecurityContext
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)            // Never use http session to obtain a SecurityContext
                 .and()
-                .httpBasic();                                                 // Continue to use HTTP Basic for authentication
+                .httpBasic();                                                      // Continue to use HTTP Basic for authentication
     }
 
     /**
