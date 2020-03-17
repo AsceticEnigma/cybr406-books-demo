@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -16,6 +17,7 @@ import org.springframework.security.provisioning.JdbcUserDetailsManager;
 
 import javax.sql.DataSource;
 
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
@@ -28,13 +30,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     JdbcUserDetailsManager jdbcUserDetailsManager() {
         // We plan to store and retrieve user details from a database.
+        // This class can be used create new Users in the database and will handle encrypting their passwords.
+        // It can also be used to retrieve existing Users.
         return new JdbcUserDetailsManager(dataSource);
     }
 
     @Bean
     PasswordEncoder passwordEncoder() {
-        // A DelegatingPasswordEncoder can handle numerous different password encodings based on the prefix
-        // of the password.
+        // A DelegatingPasswordEncoder can handle numerous different password encodings based on the prefix of the
+        // password. You can use it manually (in a unit test for example) to export an encrypted password that can be
+        // added to a Liquibase changelog.
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
@@ -57,6 +62,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        configureH2ConsoleSecurity(http);
+
+        // Customize access here using the http object
+        http.authorizeRequests()
+                .mvcMatchers(HttpMethod.GET, "/**").permitAll()   // Allow all read-only requests using GET
+                .anyRequest().authenticated()                                 // Any other requests (POST, PUT)
+                .and()
+                .csrf().disable()                                             // Disable Cross Site Request Forgery protection
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)       // Never use http session to obtain a SecurityContext
+                .and()
+                .httpBasic();                                                 // Continue to use HTTP Basic for authentication
+    }
+
+    /**
+     * The H2 console is rendered in a frame. Some of the protective security measures automatically added by Spring
+     * Security prevent this frame from working. The method will allow us to use h2 console frame if its enabled.
+     */
+    private void configureH2ConsoleSecurity(HttpSecurity http) throws Exception {
         // Configure security for the h2 console. This should only ever happen in dev environments.
         if (h2ConsoleEnabled) {
             http
@@ -69,17 +93,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             // See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
             http.headers().frameOptions().sameOrigin();
         }
-
-        // Customize access here using the http object
-        http.authorizeRequests()
-                .mvcMatchers(HttpMethod.GET, "/**").permitAll()  // Allow all read-only requests using GET
-                .anyRequest().authenticated()                                 // Any other requests (POST, PUT)
-                .and()
-                .csrf().disable()                                             // Disable Cross Site Request Forgery protection
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)       // Never use http session to obtain a SecurityContext
-                .and()
-                .httpBasic();                                                 // Continue to use HTTP Basic for authentication
     }
 
 }
